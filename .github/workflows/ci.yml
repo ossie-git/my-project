@@ -17,8 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Invoke Error
-      run: ls "nonexistantfile"
+#    - name: Invoke Error
+#     run: ls "nonexistantfile"
   
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
@@ -31,11 +31,11 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-#    - name: Build and Push Docker Image
-#      uses: mr-smithers-excellent/docker-build-push@v4
-#      with:
-#        image: nanajanashia/demo-app
-#        registry: docker.io
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: oelnaggar/javaapptest
+        registry: docker.io
 #        username: ${{ secrets.DOCKER_USERNAME }}
 #        password: ${{ secrets.DOCKER_PASSWORD }}
          
